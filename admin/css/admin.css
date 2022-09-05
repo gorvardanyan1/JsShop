@@ -12,6 +12,7 @@ img {
 }
 
 table {
+    overflow-x: scroll;
     border-collapse: collapse;
     width: 80%;
     margin: 0 auto;

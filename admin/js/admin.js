@@ -10,6 +10,7 @@ function show(products) {
         let tr = document.createElement("tr")
         tr.innerHTML = `  
      <td>${product.id}</td>
+     <td>${product.productType}</td>
      <td>${product.productName}</td>
      <td>${product.price}</td>
      <td><img src=./images/${product.image}></td> 
@@ -35,10 +36,16 @@ function deleteProduct(that, id) {
     // products = products.filter(e => e.id != id)
     // show(products)
 
-    let fin = products.find(e => e.id == id)
-    products.splice(products.indexOf(fin), 1)
+    let findElement = products.find(e => e.id == id)
+    products.splice(products.indexOf(findElement), 1)
     that.parentElement.parentElement.remove()
 
     localStorage.setItem("products", JSON.stringify(products))
 }
 show(products)
+
+function showCategories(){
+    tbodyCategories.innerHTML = ""
+    let tr = document.createElement("tr")
+    
+}
