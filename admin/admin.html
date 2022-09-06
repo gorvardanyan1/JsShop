@@ -11,7 +11,7 @@
 
 <body>
     <div class="container">
-        <div>
+        <div class="productDiv">
             <table>
                 <thead>
                     <tr>
@@ -33,7 +33,7 @@
 
         </div>
         <div class="categoryDiv">
-            <table >
+            <table>
                 <thead>
                     <tr>
                         <th>id</th>
@@ -45,7 +45,13 @@
 
                 </tbody>
             </table>
-            <a href="addCategories.html">Add</a>
+            <div id="editCategoriesDiv" class="editDiv">
+                <input type="text" id="editCategoriesInput">
+                <input id="editCategoriesBtn" type="button" value="Edit">
+            </div>
+            <div class="addDiv">
+                <a class="add" href="addCategories.html">Add</a>
+            </div>
         </div>
     </div>
     <script src="./js/admin.js"></script>

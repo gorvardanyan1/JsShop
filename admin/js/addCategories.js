@@ -1,6 +1,6 @@
-const categores = localStorage.getItem("categories")?JSON.parse( localStorage.getItem("categories")):[]
+const categores = localStorage.getItem("categories") ? JSON.parse(localStorage.getItem("categories")) : []
 
-categoryBtn.onclick = function(){
+categoryBtn.onclick = function () {
     categores.push(categoryName.value)
-    localStorage.setItem('categories',JSON.stringify(categores))
+    localStorage.setItem('categories', JSON.stringify(categores))
 }  
