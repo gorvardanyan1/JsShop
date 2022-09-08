@@ -16,7 +16,7 @@ function show(products) {
      <td>${product.price}</td>
      <td><img class="productImg" src=./images/${product.image}></td> 
     
-     <td class="editTd"><img class="editImg" src="./edit.png" onclick=edit(${product.id})>
+     <td class="editTd"><img class="editImg" src="./edit (1).png" onclick=edit(${product.id})>
     
      <img class="trash" src="./trash.png" onClick=deleteProduct(this,${product.id},${index})>
      
@@ -56,7 +56,7 @@ function showCategories() {
         <td>${index + 1}</td>
             <td>${elem}</td>
 
-            <td class="editTd"><img class="editImg" src="./edit.png" onclick=editCategories(${index})>
+            <td class="editTd"><img class="editImg" src="./edit (1).png" onclick=editCategories(${index})>
     
             <img class="trash" src="./trash.png" onclick=removeCategories(this,${index})>
             
@@ -90,3 +90,10 @@ editCategoriesBtn.onclick = function () {
 }
 
 showCategories()
+
+
+////////// LogOut/////
+function logOutFunc() {
+    localStorage.removeItem("admin")
+    location.href = "login.html"
+}

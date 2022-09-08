@@ -10,15 +10,38 @@
 </head>
 
 <body>
+
     <div class="container">
         <nav>
-            <h1>Logo</h1>
-            <div class="basket">
-                <span id="cartProdLength">0</span>
-                <img src="shopping-cart (2).png" alt="cart">
+            <h1>MobileShop </h1>
+            <div class="cartDiv" id="cartDiv">
+                <span>
+                    <p id="cartProdLength">0</p>
+                </span>
+                <img src=" shopping-cart (2).png" alt="cart">
             </div>
 
         </nav>
+        <div class="cartProductDiv" id="cartProductDiv">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <h2>Shopping Cart</h1>
+                        </th>
+                        <th colspan="2">
+                            <h2 id="removeCartElem">Remove All</h1>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyCart">
+
+                </tbody>
+            </table>
+            <hr>
+            <div id="totalPriceDiv"></div>
+        </div>
         <main id="mainDiv">
 
         </main>

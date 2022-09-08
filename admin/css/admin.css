@@ -1,29 +1,36 @@
 * {
-
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 
-/* .container {
-    max-width: 400px;
-    margin: 150px auto;
-    background-color: #f3f3f3;
-} */
+nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #8ebbff;
+    color: #ffffff;
 
-/* .container form input:not([type=button]) {
+}
 
-    display: block;
-    margin: 0 auto;
-    width: 90%;
+nav h1 {
+    font-weight: 300;
+    font-size: 28px;
+}
 
-} */
+nav h3 {
+    font-weight: 300;
+    font-size: 25px;
+}
 
 .productImg {
     width: 100px;
     height: 100px;
 }
-
+.productDiv{
+    margin-top: 50px;
+}
 table {
     /* overflow-x: scroll; */
     border-collapse: collapse;
@@ -47,15 +54,15 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-    color: #009879;
-    border-bottom: 3px solid #009879;
+    color:#2a86ff;
+    border-bottom: 3px solid#2a86ff;
 }
 
 
 
 th {
     color: #ffffff;
-    background-color: #009879;
+    background-color: #2a86ff;
 
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -67,7 +74,9 @@ th {
 
 .editImg,
 .trash {
-    width: 25%;
+    width: 40px;
+
+    object-fit: cover;
 }
 
 
@@ -82,7 +91,7 @@ th {
     border-radius: 5px;
     text-decoration: none;
     padding: 10px 50px;
-    background-color: #009879;
+    background-color:#2a86ff;
     color: #ffffff;
     font-weight: 800;
     font-size: 20px;
@@ -102,7 +111,6 @@ th {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
-
     background-color: #f3f3f3;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     transition-timing-function: ease;
@@ -128,13 +136,14 @@ th {
 
     border: none;
     border-radius: 5px;
-    background-color: #009879;
+    background-color:#2a86ff;
     color: #ffffff;
     font-weight: 800;
     font-size: 20px;
 }
 
-.containerProductEdit {
+.containerProductEdit,
+.containerLogin {
     min-width: 300px;
     position: absolute;
     top: 50%;
@@ -144,7 +153,8 @@ th {
 
 }
 
-.containerProductEdit form input:not([type=button]) {
+.containerProductEdit form input:not([type=button]),
+.containerLogin form input:not([type=button]) {
     border: none;
     display: block;
     margin: 5px auto;
@@ -154,13 +164,14 @@ th {
     outline: none;
 }
 
-.containerProductEdit form input[type=button] {
+.containerProductEdit form input[type=button],
+.containerLogin form input[type=button] {
     display: block;
     margin: 0 auto;
     border: none;
     border-radius: 5px;
     padding: 7px 50px;
-    background-color: #009879;
+    background-color: #2a86ff;
     color: #ffffff;
     font-weight: 800;
     font-size: 20px;

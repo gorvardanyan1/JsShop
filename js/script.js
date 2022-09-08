@@ -1,7 +1,7 @@
 const products = localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : []
 const categories = localStorage.getItem("categories") ? JSON.parse(localStorage.getItem("categories")) : []
-const cartProduct = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
-cartProdLength.innerText = cartProduct.length
+let cartProducts = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
+cartProdLength.innerText = cartProducts.length
 function render(products, categories) {
     categories.map((element) => {
         let section = document.createElement("section")
@@ -19,10 +19,9 @@ function render(products, categories) {
             productDiv.innerHTML = `
             <img class="productImg" src=./admin/images/${elem.image} >
             <h5>${elem.productName}</h5>
-             <p>${elem.price}$0</p>
+             <p>${elem.price}$</p>
              <button onclick=addCartFunc(${elem.id})>Add Cart</button>
             `
-
 
             productsDiv.append(productDiv)
 
@@ -36,9 +35,115 @@ function render(products, categories) {
 }
 render(products, categories)
 
+cartRender(cartProducts)
+/////////////////////////////////////////////cart ////////////////////////////
 function addCartFunc(id) {
 
-    cartProduct.push(products.find(e => e.id === id))
-    cartProdLength.innerText = cartProduct.length
-    localStorage.setItem("cart", JSON.stringify(cartProduct))
+
+
+
+    if (cartProducts.find(e => e.id === id)) {
+        let finded = cartProducts.find(e => e.id === id)
+        // finded.count += 1
+        finded.totalCount += +finded.price
+    }
+    else {
+        let finded = products.find(e => e.id === id)
+        // finded.count = 1
+        finded.totalCount = +finded.price
+        cartProducts.push(finded)
+    }
+    cartProdLength.innerText = cartProducts.length
+    cartRender(cartProducts)
+
+
+    localStorage.setItem("cart", JSON.stringify(cartProducts))
+
+
+}
+
+
+
+
+
+
+
+
+
+
+cartDiv.onclick = function () {
+    cartProductDiv.classList.toggle("cartToggle")
+
+}
+
+function cartRender(productsArr) {
+    tbodyCart.innerHTML = ""
+    productsArr.map(elem => {
+        let tr = document.createElement("tr")
+
+        tr.innerHTML = `
+       <td><img src=./admin/images/${elem.image}></td>
+       <td><h4>${elem.productName}</h4></td>
+       <td class="count"><div>
+       <button onclick="countFunc(${elem.id},'-')" >-</button>
+        <h3>${elem.totalCount / elem.price}</h3> 
+        <button onclick="countFunc(${elem.id},'+')" >+</button>
+        </div>
+        </td>
+       <td>
+        <h2>${elem.totalCount}$</h2>
+         <h6 onclick=removeThisElem(${elem.id})>Remove</h6>
+       </td>
+    `
+        tbodyCart.append(tr)
+    })
+    totalPriceFunc(productsArr)
+}
+
+function totalPriceFunc(products) {
+    let totalPrice = 0
+
+    products.forEach(element => {
+        totalPrice += +element.totalCount
+    });
+
+    totalPriceDiv.innerHTML = `<h4>Sub-Total  ${totalPrice}$</h4>`
+}
+
+
+
+
+
+function countFunc(id, operator) {
+    let finded = cartProducts.find(e => e.id === id)
+
+    if (operator === "-") {
+
+        if (finded.totalCount != finded.price) {
+            finded.totalCount -= +finded.price
+        }
+    }
+    else {
+
+        finded.totalCount += +finded.price
+    }
+    cartRender(cartProducts)
+
+    localStorage.setItem("cart", JSON.stringify(cartProducts))
+}
+
+removeCartElem.onclick = function () {
+    cartProducts = []
+    cartProdLength.innerText = cartProducts.length
+    cartRender(cartProducts)
+    localStorage.setItem("cart", JSON.stringify([]))
+}
+
+function removeThisElem(id) {
+    cartProdLength.innerText = cartProducts.length
+    let finded = cartProducts.find(e => e.id == id)
+    cartProducts.splice(finded, 1)
+    cartProdLength.innerText = cartProducts.length
+    cartRender(cartProducts)
+    localStorage.setItem("cart", JSON.stringify(cartProducts))
 }

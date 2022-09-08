@@ -1,19 +1,57 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #f3f3f3;
+}
+
+.container {
+  border-radius: 10px;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
 nav {
+  border-radius: 12px;
+  padding: 2px 5px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  background-color: #2A86FF;
+}
+nav h1 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 500;
 }
 nav div {
   position: relative;
 }
 nav div span {
-  width: 10px;
-  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5px;
+  height: 5px;
   padding: 10px;
   color: #fff;
   position: absolute;
+  top: 2px;
   left: 60%;
   border-radius: 50%;
   background-color: #FBE505;
+}
+
+section h2 {
+  color: #62716A;
+  margin: 10px 0px;
+  font-size: 42px;
+  text-align: center;
+  font-weight: 200;
+  text-shadow: 5px 5px #f3f3f3;
 }
 
 .productsDiv {
@@ -21,9 +59,113 @@ nav div span {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+.productsDiv .productDiv {
+  max-width: 250px;
+}
+.productsDiv .productDiv h5 {
+  font-weight: 300;
+  font-size: 27px;
+  text-align: center;
+}
+.productsDiv .productDiv p {
+  font-size: 19px;
+  text-align: center;
+  color: #FF1205;
+}
+.productsDiv .productDiv button {
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #2A86FF;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 5px 10px;
+}
+.productsDiv .productDiv button:hover {
+  font-size: 19px;
+  transition: 1s;
+}
 .productsDiv img {
   width: 100%;
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.productDiv:hover {
+  box-shadow: 5px 7px 5px 7px #f3f3f3;
+}
+
+.cartProductDiv {
+  visibility: hidden;
+  position: absolute;
+  left: 97%;
+  transform: translate(-90%);
+}
+
+.cartToggle {
+  visibility: visible;
+}
+
+.cartProductDiv {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  color: #62716A;
+}
+.cartProductDiv h4 {
+  margin: 10px 10px;
+  text-align: right;
+  font-size: 21px;
+  font-weight: 500;
+}
+.cartProductDiv table {
+  padding: 5px;
+}
+.cartProductDiv table thead tr th h2 {
+  font-size: 13px;
+  display: inline;
+  color: #62716A;
+}
+.cartProductDiv table thead tr th #removeCartElem {
+  cursor: pointer;
+  color: red;
+  text-decoration: underline;
+}
+.cartProductDiv table tbody tr td {
+  width: 25%;
+}
+.cartProductDiv table tbody tr td img {
+  border-radius: 10px;
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cartProductDiv table tbody tr td h2 {
+  font-size: 19px;
+}
+.cartProductDiv table tbody tr td h6 {
+  cursor: pointer;
+  color: red;
+  text-decoration: underline;
+}
+
+.count div {
+  display: flex;
+  align-items: flex-end;
+}
+.count div button {
+  margin: 0px 7px;
+  border: none;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 17px;
+}
+
+@media only screen and (max-width: 510px) {
+  .container {
+    margin: 0 !important;
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
