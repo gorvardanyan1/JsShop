@@ -1,7 +1,7 @@
 if (!localStorage.getItem("admin")) {
     location.href = "login.html"
 }
-let products = JSON.parse(localStorage.getItem("products"));
+let products = localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : []
 let categories = JSON.parse(localStorage.getItem("categories"))
 
 function show(products) {

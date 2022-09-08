@@ -5,19 +5,19 @@
 }
 
 
-.container {
+/* .container {
     max-width: 400px;
     margin: 150px auto;
     background-color: #f3f3f3;
-}
+} */
 
-.container form input:not([type=button]) {
+/* .container form input:not([type=button]) {
 
     display: block;
     margin: 0 auto;
     width: 90%;
 
-}
+} */
 
 .productImg {
     width: 100px;
@@ -79,7 +79,7 @@ th {
 }
 
 .add {
-
+    border-radius: 5px;
     text-decoration: none;
     padding: 10px 50px;
     background-color: #009879;
@@ -94,7 +94,7 @@ th {
 
 #editCategoriesDiv {
 
-   
+
     border-radius: 10px;
     padding: 20px;
     position: absolute;
@@ -102,7 +102,7 @@ th {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
-  
+
     background-color: #f3f3f3;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     transition-timing-function: ease;
@@ -110,7 +110,7 @@ th {
 
 .editDiv {
     visibility: hidden;
-  
+
 }
 
 #editCategoriesInput {
@@ -132,4 +132,60 @@ th {
     color: #ffffff;
     font-weight: 800;
     font-size: 20px;
+}
+
+.containerProductEdit {
+    min-width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f3f3f3;
+
+}
+
+.containerProductEdit form input:not([type=button]) {
+    border: none;
+    display: block;
+    margin: 5px auto;
+    width: 90%;
+    font-size: 20px;
+    padding: 5px;
+    outline: none;
+}
+
+.containerProductEdit form input[type=button] {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 50px;
+    background-color: #009879;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+#typeSelect {
+    outline: none;
+    border: none;
+    display: block;
+    margin: 5px auto;
+    width: 90%;
+    font-size: 20px;
+}
+
+.containerAddCategories {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input {
+    border-radius: 5px;
+}
+
+tbody tr:hover {
+    font-size: 25px;
 }

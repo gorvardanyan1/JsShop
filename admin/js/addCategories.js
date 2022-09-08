@@ -3,4 +3,5 @@ const categores = localStorage.getItem("categories") ? JSON.parse(localStorage.g
 categoryBtn.onclick = function () {
     categores.push(categoryName.value)
     localStorage.setItem('categories', JSON.stringify(categores))
+    location.href = "admin.html"
 }  
