@@ -100,8 +100,7 @@ section h2 {
 .cartProductDiv {
   visibility: hidden;
   position: absolute;
-  left: 97%;
-  transform: translate(-90%);
+  right: 0;
 }
 
 .cartToggle {
@@ -166,6 +165,9 @@ section h2 {
 @media only screen and (max-width: 510px) {
   .container {
     margin: 0 !important;
+    width: 100%;
+  }
+  .cartProductDiv {
     width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

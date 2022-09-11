@@ -114,9 +114,7 @@ section {
 .cartProductDiv {
     visibility: hidden;
     position: absolute;
-    left: 97%;
-
-    transform: translate(-90%);
+    right: 0;
 
 }
 
@@ -215,8 +213,10 @@ section {
 
 @media only screen and(max-width:510px) {
     .container {
-
         margin: 0 !important;
+        width: 100%;
+    }
+    .cartProductDiv{
         width: 100%;
     }
 }

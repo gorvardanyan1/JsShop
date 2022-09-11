@@ -44,7 +44,7 @@ function deleteProduct(that, id, index) {
     localStorage.setItem("products", JSON.stringify(products))
 }
 show(products)
-///////////////////// categories
+///////////////////// categories /////////////////////////////
 
 let id
 function showCategories() {
